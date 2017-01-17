@@ -8,7 +8,11 @@ Array.prototype.concat()
 *******************/
 
 function diffArray(arr1, arr2) {
+  // create empty array to hold numbers that differ
   var newArr = [];
-  // Same, same; but different.
+  // compare numbers within each array to other array
+  
+  // return newArr
   return newArr;
 }
+diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5]);
