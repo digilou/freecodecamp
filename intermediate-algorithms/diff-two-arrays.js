@@ -11,7 +11,7 @@ function diffArray(arr1, arr2) {
   // create empty array to hold numbers that differ
   var newArr = [];
   // compare numbers within each array to other array
-  
+  arr1.filter(arr2); // BUT ARR2 IS NOT A FUNCTION
   // return newArr
   return newArr;
 }
