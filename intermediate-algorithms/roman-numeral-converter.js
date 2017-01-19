@@ -10,7 +10,16 @@ Array.prototype.join()
 ***************/
 
 function convertToRoman(num) {
- return num;
+  // break apart the digits
+  num.splice('');
+  
+  // compare numbers using indexOf
+  
+  
+  // rejoin the integers
+  num.join('');
+  // return conversion
+  return num;
 }
 
 convertToRoman(36);
