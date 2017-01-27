@@ -8,3 +8,19 @@ Here are some helpful links:
     Object.prototype.hasOwnProperty()
     Object.keys()
 **********/
+
+// Attempted solution
+function whatIsInAName(collection, source) {
+  // What's in a name?
+  var arr = [];
+  // Only change code below this line
+  for (let [key, value] of Object.entries(collection)){ // want to use Object.entries() but need to get it to work first!
+    if (key.hasOwnProperty(Object.entries(source))){
+      arr.push(key,value);
+    }
+  }
+  // Only change code above this line
+  return arr;
+}
+
+whatIsInAName([{ first: "Romeo", last: "Montague" }, { first: "Mercutio", last: null }, { first: "Tybalt", last: "Capulet" }], { last: "Capulet" });
