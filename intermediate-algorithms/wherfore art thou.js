@@ -14,9 +14,9 @@ function whatIsInAName(collection, source) {
   // What's in a name?
   var arr = [];
   // Only change code below this line
-  for (let [key, value] of Object.entries(collection)){ // want to use Object.entries() but need to get it to work first!
-    if (key.hasOwnProperty(Object.entries(source))){
-      arr.push(key,value);
+  for (let [key, value] of Object.entries(collection)){
+    if (Object.value(source) === value){
+      arr.push(key + ':' + value);
     }
   }
   // Only change code above this line
