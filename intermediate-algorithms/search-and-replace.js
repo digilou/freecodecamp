@@ -16,6 +16,8 @@ Array.prototype.join()
 
 ******************/
 function myReplace(str, before, after) {
+  // replace second argument with third argument
+  str = str.replace(before, after);
   return str;
 }
 
