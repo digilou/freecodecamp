@@ -19,3 +19,18 @@ Here are some helpful links:
 
     String.prototype.split()
 *******/
+
+function translatePigLatin(str) {
+  new regexp = /[aeiou]\g/;
+  str.split('');
+  if (str[0] === regexp){
+    str[0] + "way";
+  } else{
+    str[0] + "ay";
+  }
+  var first = str[0].pop();
+  str.push(first);
+  return str.join();
+}
+
+translatePigLatin("consonant");
