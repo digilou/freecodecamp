@@ -21,16 +21,14 @@ Here are some helpful links:
 *******/
 
 function translatePigLatin(str) {
-  new regexp = /[aeiou]\g/;
-  str.split('');
-  if (str[0] === regexp){
-    str[0] + "way";
+  var regexp = new RegExp(/aeiou/, 'g');
+  var pigLatin = '';
+  if (str.indexOf(0) === regexp){
+     pigLatin = str[0] + "way";
   } else{
-    str[0] + "ay";
+    pigLatin = str[0] + "ay";
   }
-  var first = str[0].pop();
-  str.push(first);
-  return str.join();
+  return pigLatin; // returns "cay" BUT needs to return string and "cay" on back instead
 }
 
 translatePigLatin("consonant");
