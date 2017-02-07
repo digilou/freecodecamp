@@ -21,14 +21,19 @@ Here are some helpful links:
 *******/
 
 function translatePigLatin(str) {
-  var regexp = new RegExp(/aeiou/, 'g');
-  var pigLatin = '';
-  if (str.indexOf(0) === regexp){
-     pigLatin = str[0] + "way";
-  } else{
-    pigLatin = str[0] + "ay";
+    var regex = new RegExp(/[aeiou]/g);
+  var pigLatin = "";
+  // Check if the first character is a vowel
+  if (str[0].match(regex)) {
+    pigLatin = str + 'way';
+  } else {
+    // Find how many consonants before the first vowel.
+    var vowelIndexes = str.indexOf(str.match(regex)[0]);
+    // Take the string from the first vowel to the last char
+    // then add the consonants that were previously omitted and add the ending.
+    pigLatin = str.substr(vowelIndexes) + str.substr(0, vowelIndexes) + 'ay';
   }
-  return pigLatin; // returns "cay" BUT needs to return string and "cay" on back instead
+  return pigLatin;
 }
 
 translatePigLatin("consonant");
