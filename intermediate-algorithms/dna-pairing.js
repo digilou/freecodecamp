@@ -12,3 +12,29 @@ The character and its pair are paired up in an array, and all the arrays are gro
 Array.prototype.push()
 String.prototype.split()
 **************/
+
+function pairElement(str) {
+  var pairArr = [];
+  var find = function(letter){
+    switch(letter){
+      case 'A':
+        pairArr.push(['A', 'T']);
+        break;
+      case 'T':
+        pairArr.push(['T', 'A']);
+        break;
+      case 'C':
+        pairArr.push(['C', 'G']);
+        break;
+      case 'G':
+        pairArr.push(['G', 'C']);
+        break;
+    }
+  };
+  for(var i = 0; i < str.length; i++){
+    find(str[i]);
+  }
+  return pairArr;
+}
+
+pairElement("GCG");
