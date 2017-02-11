@@ -7,3 +7,21 @@ If all letters are present in the range, return undefined.
 
     String.fromCharCode()
 *********/
+
+function fearNotLetter(str) {
+  var allChars = '';
+  var absentChars = new RegExp('[^'+str+']', 'g');
+
+  for (var i = 0; allChars[allChars.length-1] !== str[str.length-1] ; i++){
+    allChars += String.fromCharCode(str[0].charCodeAt(0) + i);
+    
+  }
+  
+  if(allChars.match(absentChars)){
+    return allChars.match(absentChars).join('');
+  } else {
+    return undefined;
+  }
+}
+
+fearNotLetter("abce");
