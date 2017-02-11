@@ -7,11 +7,7 @@ Boolean Objects
 ***********/
 
 function booWho(bool) {
-  f(bool){
-    return true;
-  } else {
-    return false;
-  }
+  return typeof bool === "boolean";
 }
 
 booWho(null);
