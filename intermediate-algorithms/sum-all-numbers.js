@@ -5,8 +5,6 @@ Math.min()
 Array.prototype.reduce()
 *******/
 
-// answer started.....
-
 function sumAll(arr) {
   // find lowest number
   var min = Math.min(arr[0], arr[1]);
@@ -18,6 +16,6 @@ function sumAll(arr) {
   for(var i = min; i <= max; i++){
     num += i;
   }
-  // don't forget to return the final sum
+
   return num;
 }
