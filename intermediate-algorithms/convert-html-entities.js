@@ -8,14 +8,20 @@ Convert the characters &, <, >, " (double quote), and ' (apostrophe), in a strin
 ********/
 
 function convertHTML(str) {
-  var regExp = new RegExp(['&', '<', '>', '"', "'"], "g","i");
-  switch(str){
-    case '&':
-      str = "&amp;";
-      break;
-  }
-  // &amp; &lt; &gt; &dquo; &apo;
-  return str;
+  // create a list of HTML entities
+  var htmlEntities = {
+    '&':'&amp;',
+    '<':'&lt;',
+    '>':'&gt;',
+    '"':'&quot;',
+    '\'':'&apos;'
+  };
+  // split string
+  // find and replace symbols with HTML entities
+  // return joined string
+  return str.split('').map(function(value){
+    return htmlEntities[value] || value;
+  }).join('');
 }
 
 convertHTML("Dolce & Gabbana");
