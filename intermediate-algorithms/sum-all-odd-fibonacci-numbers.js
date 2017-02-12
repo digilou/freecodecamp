@@ -9,7 +9,22 @@ Remainder
 ********/
 
 function sumFibs(num) {
-  return num;
+  // set up placeholders for previous number, current number, and result
+  var prevNum = 0;
+  var currentNum = 1;
+  var result = 0;
+  // loop through sequence
+  while(currentNum <= num){
+    // evaluate odd numbers
+    if(currentNum % 2 !== 0){
+      result += currentNum;
+    }
+    // add previous number to current number
+    currentNum += prevNum;
+    // subtract previous number from current number
+    prevNum = currentNum - prevNum;
+  }
+  return result;
 }
 
 sumFibs(4);
