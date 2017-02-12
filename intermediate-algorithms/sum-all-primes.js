@@ -13,7 +13,7 @@ function sumPrimes(num) {
   // create empty array to push prime number into
   var primes = [];
 
-  // check if numbers are prime
+  // Sieve of Eratosthenes
   function isPrime(number){
     // loop through numbers up to num
     for(var i = 2; i <= num; i++){
