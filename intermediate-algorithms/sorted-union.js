@@ -13,7 +13,17 @@ Check the assertion tests for examples.
 ********/
 
 function uniteUnique(arr) {
-  return arr;
+  var newArr = [];
+  // find how many arguments are given
+  var args = [].slice.call(arguments);
+  // loop through array using reduce or map
+  newArr = args.reduce(function(a,b){
+    // filter out duplicates
+    return a.concat(b.filter(function(i){
+      return a.indexOf(i) === -1;
+    }));
+  });
+  return newArr;
 }
 
 uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1]);
