@@ -10,7 +10,35 @@ The provided number may not be a prime.
 ********/
 
 function sumPrimes(num) {
-  return num;
+  // create empty array to push prime number into
+  var primes = [];
+
+  // check if numbers are prime
+  function isPrime(number){
+    // loop through numbers up to num
+    for(var i = 2; i <= num; i++){
+      // find prime numbers
+      if(num % i === 0 && num != i){
+        return false;
+      }
+    }
+    return true;
+  }
+  
+  // 1 is not prime
+  if(num === 1){
+    return 0;
+  }
+  
+  // check is number isn't prime and move on to next number
+  if(isPrime(num) === false){
+    return sumPrimes(num - 1);
+  }
+  
+  // check if number is prime and add to next sequence using recursion
+  if(isPrime(num)){
+    return num + sumPrimes(num - 1);
+  }
 }
 
 sumPrimes(10);
