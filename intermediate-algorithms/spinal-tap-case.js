@@ -6,9 +6,10 @@ String.prototype.replace()
 ********/
 
 function spinalCase(str) {
-  // "It's such a fine line between stupid, and clever."
-  // --David St. Hubbins
-  return str;
+  // Replace low-upper case to low-space-uppercase
+  str = str.replace(/([a-z])([A-Z])/g, '$1 $2');
+  // Replace spaces and underscores with "-" and make everything lower case
+  return str.replace(/\s+|_+/g, "-").toLowerCase();
 }
 
 spinalCase('This Is Spinal Tap');
