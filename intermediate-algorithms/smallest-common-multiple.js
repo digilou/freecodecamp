@@ -9,7 +9,25 @@ e.g. for 1 and 3 - find the smallest common multiple of both 1 and 3 that is eve
 ********/
 
 function smallestCommons(arr) {
-  return lcm;
+  var range = [];
+  // loop through range of numbers and push into new array
+  for (var i = Math.max(arr[0], arr[1]); i >= Math.min(arr[0], arr[1]); i--) {
+    range.push(i);
+  }
+  
+  // use reduce array to single value (lcm) by evaluating the gcd
+  return range.reduce(function(previousValue, currentValue) {
+    var gcdPrevCurr = gcd(previousValue, currentValue);
+    return (previousValue * currentValue) / gcdPrevCurr;
+  });
+
+  // Euclidean Algorithm
+  function gcd(x, y) {
+    if (y === 0)
+        return x;
+    else
+        return gcd(y, x%y);
+  }
 }
 
 smallestCommons([1,5]);
