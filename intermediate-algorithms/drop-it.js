@@ -11,7 +11,14 @@ Return the rest of the array, otherwise return an empty array.
 ********/
 
 function dropElements(arr, func) {
-  // Drop them elements.
+  var length = arr.length;
+  for (var i = 0; i < length; i++) {
+    if (func(arr[0])) {
+      break;
+    } else {
+      arr.shift();
+    }
+  }
   return arr;
 }
 
