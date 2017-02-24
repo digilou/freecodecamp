@@ -13,10 +13,24 @@ If either argument isn't a valid number, return undefined.
 
 - Closures
 - Arguments object
-********/
+- Array.prototype.reduce
+- Array.prototype.some
+- Array.from
 
+********/
 function addTogether() {
-  return false;
+  // create array-like iterable object for arguments provided
+  const arr = Array.from(arguments);
+  // check is numbers are numbers else return undefined
+  return arr.some(num => typeof num != 'number') ?
+    undefined :
+    // check how many arguments are provided
+    arr.length > 1 ?
+      // add the arguments if greater than 1
+      arr.reduce((acc, num) => acc += num, 0) :
+      (num) => typeof num === 'number' ?
+        num + arr[0] :
+        undefined;
 }
 
 addTogether(2,3);
