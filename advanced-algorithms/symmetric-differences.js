@@ -11,9 +11,28 @@ Array.prototype.reduce()
 Symmetric Difference
 ********/
 
-
 function sym(args) {
-  return args;
+  // convert arguments to array object using spread operator
+  args = [...arguments];
+  // find difference between arguments
+  let getDiff = function(arr1, arr2) {
+    // return items in arr1 that don't exist in arr2
+    function filterFunction(arr1, arr2) {
+      return arr1.filter(function(item) {
+        return arr2.indexOf(item) === -1;
+      });
+    }
+    // filter each array against the other
+    return filterFunction(arr1, arr2)
+      .concat(filterFunction(arr2, arr1));
+  };
+  // find the unique values
+  const sdArr = args.reduce(getDiff,[]);
+  // get the unique values
+  let unique = sdArr.filter(function(e, i, self) {
+    return i === self.indexOf(e);
+    });
+  return unique;
 }
 
 sym([1, 2, 3], [5, 2, 1, 4]);
