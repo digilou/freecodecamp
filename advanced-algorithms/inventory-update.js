@@ -5,12 +5,27 @@ Compare and update the inventory stored in a 2D array against a second 2D array 
 ********/
 
 function updateInventory(arr1, arr2) {
-  // compare arr1 and arr2 (2D arrays)
-  // update arr1 with arr2 quantities
-  // add items that may not exist
+  // create indicator to define if item is present or not
+  var index;
+  // loop through each array to compare items
+  // and add on to existing quantities
+  arr2.forEach(function(item1){
+    index = 0;
+    arr1.forEach(function(item2){
+      if(item1[1] === item2[1]){
+        item2[0] += item1[0];
+        index = 1;
+      }
+    });
+    // if item is non-existent, push the new items
+    // into current inventory
+    if(index === 0){
+      arr1.push(item1);
+    }
+  });  
 
   // return in alphabetical order
-  // use sort by targeting the string in the array
+  // use sort by targeting the second item in 2D array
   var sort = (a,b) => a[1] > b[1] ? 1 : -1;
   return arr1.sort(sort);
 }
