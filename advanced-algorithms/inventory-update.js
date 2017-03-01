@@ -5,8 +5,14 @@ Compare and update the inventory stored in a 2D array against a second 2D array 
 ********/
 
 function updateInventory(arr1, arr2) {
-    // All inventory must be accounted for or you're fired!
-    return arr1;
+  // compare arr1 and arr2 (2D arrays)
+  // update arr1 with arr2 quantities
+  // add items that may not exist
+
+  // return in alphabetical order
+  // use sort by targeting the string in the array
+  var sort = (a,b) => a[1] > b[1] ? 1 : -1;
+  return arr1.sort(sort);
 }
 
 // Example inventory lists
