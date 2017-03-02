@@ -7,7 +7,6 @@ For example, aab should return 2 because it has 6 total permutations (aab, aab, 
 - RegExp
 ********/
 
-
 function permAlone(str) {
   
   // Heap's algorithm https://en.wikipedia.org/wiki/Heap%27s_algorithm
