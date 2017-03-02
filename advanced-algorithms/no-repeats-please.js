@@ -11,8 +11,8 @@ function permAlone(str) {
   
   // Heap's algorithm https://en.wikipedia.org/wiki/Heap%27s_algorithm
   
-  // catch repeating characters
-  const pattern = new RegExp('', 'gi');
+  // catch repeating consecutive characters
+  const pattern = /(.)\1+/g;
   
   // permutations should be an array of joined strings
   
