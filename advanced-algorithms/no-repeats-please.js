@@ -15,8 +15,22 @@ function permAlone(str) {
   const pattern = /(.)\1+/g;
   
   // permutations should be an array of joined strings
+  const arr = str.split('');
+  let permut = [];
+  let holding;
   
-  // return total number of permutations
+  // if string contains same character, return 0
+  if(str.match(pattern) !== null && str.match(pattern)[0] === str){
+    return 0;
+  }
+  
+  // swap variables content
+  
+  // create permutations array using Heap's algorithm
+  
+  // filter out repeated permutations
+  
+  // return total number of permutations that are not repeated
   return str;
 }
 
