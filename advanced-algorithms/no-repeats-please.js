@@ -24,14 +24,33 @@ function permAlone(str) {
     return 0;
   }
   
-  // swap variables content
-  
+  // switch around content of variables
+  const swap = (i,j) => {
+    holding = arr[i];
+    arr[i] = arr[j];
+    arr[j] = holding;
+  };
   // create permutations array using Heap's algorithm
+  const heaps = function (int) {
+    if (int === 1) {
+      permut.push(arr.join(''));
+    } else {
+      for (let i = 0; i != int; i++) {
+        heaps(int - 1);
+        swap(int % 2 ? 
+             0 : i, int - 1);
+      }
+    }
+  };
+  heaps(arr.length);
   
   // filter out repeated permutations
+  const filter = permut.filter(string => !string.match(pattern));
+
   
   // return total number of permutations that are not repeated
-  return str;
+  return filter.length;
 }
 
 permAlone('aab');
+
