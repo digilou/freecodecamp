@@ -17,6 +17,14 @@ Below we'll take their corresponding indices and add them.
 ********/
 
 function pairwise(arr, arg) {
+  // find pairs within arr where sum === arg
+  var pairs = [];
+  
+  // return sum of indices of those numbers that pair
+  var sum = function(){
+    
+  };
+  
   return arg;
 }
 
