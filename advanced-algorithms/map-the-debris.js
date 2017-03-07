@@ -15,15 +15,17 @@ The radius of the earth is 6367.4447 kilometers, and the GM value of earth is 39
 function orbitalPeriod(arr) {
   var GM = 398600.4418; // gravitational parameter Math.pwr(km, 3) / Math.pwr(s,-2)
   var earthRadius = 6367.4447; // km
-  var avgAlt = arr(obj.avgAlt);
   
-  // transform average altitude into orbital periods with Kepler's Third Law
-  var keplers = 2*Math.Pi(Math.sqrt(earthRadius + avgAlt,3)/GM);
-  
-  
+  // transform average altitude into orbital periods
   // round to nearest whole number with Math.round()
-  
-  // return new array with new element orbitalPeriod:Math.round(num)
+  arr.forEach(function(obj){
+    // Kepler's Third Law
+    var keplers = Math.round(2 * Math.PI * Math.sqrt(Math.pow(earthRadius + obj.avgAlt, 3) / GM));
+    delete obj.avgAlt;
+    obj.orbitalPeriod = keplers;
+  });
+ 
+  // return array with new object orbitalPeriod:(keplers) and rm avgAlt
   return arr;
 }
 
