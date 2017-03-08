@@ -18,12 +18,29 @@ Below we'll take their corresponding indices and add them.
 
 function pairwise(arr, arg) {
   // find pairs within arr where sum === arg
-  var pairs = [];
+  let pairs = [];
   
+  // check first number...
+  for(let a in arr){
+    let temp1 = arr[a];
+    // ...against second number
+    for(let i = 1; i < arr.length; i++){
+      let temp2 = arr[i];
+      if(temp1 + temp2 === arg && i > a && pairs.indexOf(+a) === -1 && pairs.indexOf(+i) === -1){
+        pairs.push(+a, +i);
+        break;
+      }
+    }
+  }
+  if(pairs.length >= 1){
   // return sum of indices of those numbers that pair
-  var sum = function(){
-    
-  };
+    let sum = function(a,b){
+      return a + b;
+    };
+    return pairs.reduce(sum);
+  }else{
+    return 0;
+  }
   
   return arg;
 }
